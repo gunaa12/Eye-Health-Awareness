@@ -1,2 +1,2 @@
 # Eye-Health-Awareness
-For the Nextech Summer Coding Challenge, I have built a website addressing eye health during COVID-19 (directly from the infection and indirectly from increased screen time).
+For the Nextech Summer Coding Challenge, I have built a website addressing eye health during COVID-19 (directly from the infection and indirectly from increased screen time). To access this website, download the entire folder named "Eye Health Awareness - Nextech Summer Coding Challenge." After that, navigate inside the folder, and simply click on the file named "index.html."
