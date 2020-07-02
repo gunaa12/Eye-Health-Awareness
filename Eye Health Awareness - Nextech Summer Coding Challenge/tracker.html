@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+    <head>
+        <title>Eye Health - Screen Time</title>
+        <link rel="shortcut icon" href="img/screen time logo.png">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    </head>
+    <body>
+        <script src="js/nav.js"></script>
+        <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url('images/hero_bg_1.jpg');" data-aos="fade" data-stellar-background-ratio="0.5" data-aos="fade">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade-up" data-aos-delay="400">
+              <h1 class="text-white">Screen Time</h1>
+              <img src = "img/screen time logo1.png" width= "95em">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id = "gohere" class="site-section">
+        <div class="container" data-aos="fade-up">
+          <div class = "site-section-heading text-center mb-5 w-border col-md-6 mx-auto">
+            <h2 onClick = "start()">Click To Start</h2>
+          </div>
+          <div id = "section-1" style = "display: none">
+            <div class = "site-section-heading text-center mb-5 w-border col-md-6 mx-auto">
+              <p> Please enter number of hours you spend on a device each day. </p>
+            </div>
+            <table style="width: 100%">
+              <tr>
+                <th>Monday</th> 
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+              </tr>
+              <tr>
+                <td id = "monday_screen_time">0</td>
+                <td id = "tuesday_screen_value">0</td>
+                <td id = "wednesday_screen_value">0</td>
+                <td id = "thursday_screen_value">0</td>
+                <td id = "friday_screen_value">0</td>
+                <td id = "saturday_screen_value">0</td>
+                <td id = "sunday_screen_value">0</td>
+              </tr>
+              <tr>
+                <td><input type = "button" class = "inc-dec" value = "Increase" onClick = "increase('monday')"></td>
+                <td><input type = "button" class = "inc-dec" value = "Increase" onClick = "increase('tuesday')"></td>
+                <td><input type = "button" class = "inc-dec" value = "Increase" onClick = "increase('wednesday')"></td>
+                <td><input type = "button" class = "inc-dec" value = "Increase" onClick = "increase('thursday')"></td>
+                <td><input type = "button" class = "inc-dec" value = "Increase" onClick = "increase('friday')"></td>
+                <td><input type = "button" class = "inc-dec" value = "Increase" onClick = "increase('saturday')"></td>
+                <td><input type = "button" class = "inc-dec" value = "Increase" onClick = "increase('sunday')"></td>
+              </tr>
+              <tr>
+                <td><input type = "button" class = "inc-dec" value = "Decrease" onClick = "decrease('monday')"></td>
+                <td><input type = "button" class = "inc-dec" value = "Decrease" onClick = "decrease('tuesday')"></td>
+                <td><input type = "button" class = "inc-dec" value = "Decrease" onClick = "decrease('wednesday')"></td>
+                <td><input type = "button" class = "inc-dec" value = "Decrease" onClick = "decrease('thursday')"></td>
+                <td><input type = "button" class = "inc-dec" value = "Decrease" onClick = "decrease('friday')"></td>
+                <td><input type = "button" class = "inc-dec" value = "Decrease" onClick = "decrease('saturday')"></td>
+                <td><input type = "button" class = "inc-dec" value = "Decrease" onClick = "decrease('sunday')"></td>
+              </tr>
+            </table>
+            </br>
+            </br>
+            <div class = "site-section-heading text-center mb-5 w-border col-md-6 mx-auto">
+              <input type = "button" class = "inc-dec" value = "Calculate" onClick = "calculate()">
+              <input type = "button" class = "inc-dec" value = "Reset" onClick = "reset()">
+            </div>
+            <div id = "explanation" style = "display: none;" class = "site-section-heading text-center mb-5 w-border col-md-6 mx-auto">
+              <button class = "score-display-button" id = "score-display"></button>
+            </br>
+              <p> *The number above is your score.*</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="site-section bg-dark" id = "score-table" style = "display: none">
+        <div class="container" data-aos="fade-up">
+          <div>
+            <div class = "site-section-heading text-center mb-5 w-border col-md-6 mx-auto">
+              <h2>Score Table</h2>
+            </div>
+            <table>
+              <tr>
+                <th> Score </th>
+                <th> Meaning </th>
+                <th> How to get it: </th>
+              </tr>
+              <tr>
+                <td> 0 </td>
+                <td> You are not watching too much. </td>
+                <td> 14 hours per week. </td>
+              </tr>
+              <tr>
+                <td> 1 </td>
+                <td> You are close to watching too much. </td>
+                <td> 14 - 21 hours a week.</td>
+              </tr>
+              <tr>
+                <td> 2 </td>
+                <td> You are watching too much. </td>
+                <td> Above 21 hours a week. </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="site-section" id = "section-3" style = "display: none">
+        <div class="container" data-aos="fade-up">
+          <div class="row" style = "display: none" id = "good_job">
+            <div class = "site-section-heading text-center mb-5 w-border col-md-6 mx-auto">
+              <h2>Good Job! Keep up the good work!</h2>
+            </div>
+          </div>
+          <div class="row" style = "display: none" id = "brink">
+            <div class = "site-section-heading text-center mb-5 w-border col-md-6 mx-auto">
+              <h2 class= "mb-5">Good job, but watch out! You are getting close to watching too much.</h2>
+            </div>
+          </div>
+          <div class="row" style = "display: none" id = "too_much_screen_time">
+            <div class = "site-section-heading text-center mb-5 w-border col-md-6 mx-auto">
+              <h2>You might want to consider less screen time.</h2>
+            </div>
+            <div class = "site-section-heading text-left mb-5 w-border col-md-6 mx-auto">
+              <p> Please try to reduce screen time. Here are some possible ideas of what you could do: 
+                <ul>
+                  <li> Learn how to cook or something new to cook. </li>
+                  <li> Learn a new hobby. </li>
+                  <li> Stay physically fit: i.e. play a sport, jog, bike, or skateboard. </li>
+                  <li> Learn something. </li>
+                  <li> Get household chores done. </li>
+                  <li> Start gardening in you backyard. </li>
+                  <li> Read or write Creatively. </li>
+                </ul>
+              </p>
+            </div>
+            </br>
+            <div id = "question" class = "site-section-heading text-center mb-5 w-border col-md-6 mx-auto">
+              <p> Is your screen time necessary (i.e. for work)? </p>
+              <input type = "button" class = "inc-dec" value = "Yes" onClick = "showyes()">
+              <input type = "button" class = "inc-dec" value = "No" onClick = "showno()">
+            </div>
+            <div id = "yes" style = "display: none" class = "site-section-heading text-center mb-5 w-border col-md-6 mx-auto">
+              <h3> Well, if it is necessary, please follow these important tips that can help reduce eye strain: </h3>
+            </div>
+            <div id = "yes-1" style = "display: none" class = "site-section-heading text-left mb-5 w-border col-md-6 mx-auto">
+                <ol>
+                  <li>Make sure to follow the 20-20-20 rule - see something 20 feet away for 20 seconds every 20 minutes.</li>
+                  <li>Maintain good posture. The following bullet points and the illustration explain what proper "posture" and ergonomics
+                     at the desk are:
+                     <ul>
+                      <li> Keep Moniter an arm's length away. </li>
+                      <li> Sit with a straight back. </li>
+                      <li> Bend your knees at 90 degrees and put both feet flat on the ground.</li>
+                      <li> Have 2-3 inches of space between thigh and chair. </li>
+                      <li> Keep wrists straight.</li>
+                      <li> Keep hands at elbow level. </li>
+                      <li> Don't sit for too long at a time. Take breaks! </li>
+                      <li> For more information, click <a href = "http://ergonomictrends.com/proper-sitting-posture-computer-experts/">here</a> or <a href = "https://www.mayoclinic.org/healthy-lifestyle/adult-health/in-depth/office-ergonomics/art-20046169">here</a>.</li>
+                    </ul>
+                  </li>
+                </ol>
+              </p>
+              <center>
+                <a href = "https://www.mayoclinic.org/healthy-lifestyle/adult-health/in-depth/office-ergonomics/art-20046169"><img src = "img/proper posture.JPG" width = "450em"></a>
+              </center>
+              </p>
+            </div>
+            <div id = "no" style = "display: none" class = "site-section-heading text-center mb-5 w-border col-md-6 mx-auto">
+              <h3> Please be mindful about your screen time and try to reduce it, but meanwhile, follow these tips that can help reduce eye strain: </h3>
+            </div>
+            <div id = "no-1" style = "display: none" class = "site-section-heading text-left mb-5 w-border col-md-6 mx-auto">
+                <ol>
+                  <li>Make sure to follow the 20-20-20 rule - see something 20 feet away for 20 seconds every 20 minutes.</li>
+                  <li>Maintain good posture. The following bullet points and the illustration explain what proper "posture" and ergonomics
+                     at the desk are:
+                     <ul>
+                      <li> Keep Moniter an arm's length away. </li>
+                      <li> Sit with a straight back. </li>
+                      <li> Bend your knees at 90 degrees and put both feet flat on the ground.</li>
+                      <li> Have 2-3 inches of space between thigh and chair. </li>
+                      <li> Keep wrists straight.</li>
+                      <li> Keep hands at elbow level. </li>
+                      <li> Don't sit for too long at a time. Take breaks! </li>
+                      <li> For more information, click <a href = "http://ergonomictrends.com/proper-sitting-posture-computer-experts/">here</a> or <a href = "https://www.mayoclinic.org/healthy-lifestyle/adult-health/in-depth/office-ergonomics/art-20046169">here</a>.</li>
+                    </ul>
+                  </li>
+                </ol>
+              </p>
+              <center>
+                <a href = "https://www.mayoclinic.org/healthy-lifestyle/adult-health/in-depth/office-ergonomics/art-20046169"><img src = "img/proper posture.JPG" width = "450em"></a>
+              </center>
+              </p>
+            </div>
+          </div>
+          <div id = "restart" style = "display: none;" class = "site-section-heading text-center mb-5 w-border col-md-6 mx-auto">
+            <input type = "button" class = "inc-dec" value = "Restart" onClick = "reset()">
+          </div>
+        </div>
+      </div>
+      <script src="js/footer.js"></script>
+    </div>
+  </body>
+</html>
